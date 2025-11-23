@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 📦 Gestion des Commandes -- Spring Boot & Angular (JWT Security)
 
 Ce projet est une application complète de **gestion des commandes**
