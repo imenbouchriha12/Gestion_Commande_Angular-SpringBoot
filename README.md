@@ -188,7 +188,4 @@ if (token) {
 # 👤 Auteur
 
 **Bouchriha Imen**\
-Développeuse Full Stack -- Spring Boot & Angular
-=======
-
->>>>>>> b9737c7c1da139b703247d9ca65f97526f8c713e
+imenbouchriha5@gmail.com
