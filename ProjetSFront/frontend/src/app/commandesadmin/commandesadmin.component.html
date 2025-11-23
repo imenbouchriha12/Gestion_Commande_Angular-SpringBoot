@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- Barre de Recherche -->
+
+    <ul class="navbar-nav" style="margin-left: 0;">
+      <li class="nav-item active">
+        <a class="nav-link" href="/productsAdmin">
+          <i class="pi pi-box" style="margin-right: 8px;"></i> Articles
+        </a>
+      </li>
+           <li class="nav-item">
+        <a class="nav-link" href="/commandesAdmin">
+          <i class="pi pi-cart" style="margin-right: 8px;"></i> Consulter Les Commandes
+        </a>
+      </li>
+<li class="nav-item">
+  <a class="nav-link"  (click)="logout()">
+    <i class="pi pi-sign-out" style="margin-right: 8px;"></i> Se Déconnecter
+  </a>
+</li>
+
+    </ul>
+    
+
+  </div>
+</nav>
+
+
+<div class="container mt-4">
+  <h2>Liste Des Commandes </h2>
+  <table class="table table-bordered table-striped mt-3" *ngIf="orders.length > 0; else noOrders">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Client</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.orderId }}</td>
+        <td>{{ order.client }}</td>
+        <td>{{ order.email }}</td>
+        <td>{{ order.orderDate | date:'short' }}</td>
+        <td>{{ order.total_price | currency:'EUR' }}</td>
+<td>
+        <button 
+          class="btn btn-primary"
+          (click)="voirDetailsCommande(order.orderId)">
+          Voir Détails
+        </button>
+</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noOrders>
+    <p>Aucune commande confirmée pour le moment.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,7 @@
+.card {
+  transition: transform 0.3s ease-in-out; /* Ajout d'une transition douce */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Zoom de 5% à l'activation de :hover */
+}

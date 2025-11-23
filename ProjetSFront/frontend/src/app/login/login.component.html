@@ -1,0 +1,66 @@
+<section class="vh-100">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <!-- Colonne Formulaire -->
+      <div class="col-md-6 d-flex flex-column justify-content-center px-5">
+        <form #signin="ngForm" (ngSubmit)="loginAttemptUser(signin.value)" style="width: 100%; max-width: 400px;">
+        <h3 class="login-title" style="letter-spacing: 1px;">Se Connecter</h3>
+ 
+
+          <!-- Email -->
+          <div class="form-outline mb-4">
+            <label class="form-label">Email address</label>
+            <input type="email" name="email" placeholder="name@example.com" required ngModel class="form-control form-control-lg" />
+            <div *ngIf="message === 'Email field is empty'" class="text-danger">Un email est requis.</div>
+            <div *ngIf="message === 'Verify the email'" class="text-danger">Email invalide.</div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-outline mb-4 position-relative">
+            <label class="form-label">Password</label>
+            <input [type]="passwordType" name="password" placeholder="Mot de passe" required ngModel class="form-control form-control-lg" />
+            <i class="pi" [ngClass]="passwordType === 'password' ? 'pi-eye-slash' : 'pi-eye'" (click)="togglePasswordVisibility()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+            <div *ngIf="message === 'Password field is empty'" class="text-danger">Le mot de passe est requis.</div>
+          </div>
+
+          <!-- Erreur générale -->
+          <div *ngIf="message === 'Fields are empty!'" class="text-danger mb-3">
+            Veuillez remplir les champs requis.
+          </div>
+
+          <!-- Bouton -->
+<div class="mb-4">
+  <button class="btn btn-lg btn-block w-100" type="submit"
+          style="background-color: #d0809b; color: white; border: none;">
+    Se Connecter 
+  </button>
+</div>
+
+
+<p>Vous n'avez pas de Compte? <a routerLink="/register" style="color: black;">S'inscrire maintenant</a></p>
+
+        </form>
+<div class="d-flex justify-content-start mb-3">
+  <button class="btn btn-sm btn-outline-secondary" (click)="goBack()">
+    <i class="pi pi-arrow-left me-1"></i> Retour
+  </button>
+</div>
+
+      </div>
+
+      <!-- Colonne Image -->
+<div class="col-md-6 d-none d-md-block p-0">
+  <div class="h-100 w-100">
+    <img src="/assets/images/vet3.avif"
+         alt="Login image"
+         class="img-fluid h-100 w-100 object-cover" />
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+
+

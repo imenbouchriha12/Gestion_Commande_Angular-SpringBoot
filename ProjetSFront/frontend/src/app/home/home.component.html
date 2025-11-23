@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- Barre de Recherche -->
+
+    <ul class="navbar-nav" style="margin-left: 0;">
+
+      <li class="nav-item">
+        <a class="nav-link" href="/">
+          <i class="pi pi-cart" style="margin-right: 8px;"></i> Acceuil
+        </a>
+      </li>
+<li class="nav-item">
+  <a class="nav-link"  href="/login">
+    <i class="pi pi-sign-out" style="margin-right: 8px;"></i> Se Connecter
+  </a>
+</li>
+
+    </ul>
+    
+
+  </div>
+</nav>
+
+
+<div class="m-4">
+  <form class="d-flex" (submit)="onSearch()">
+  <input class="form-control form-control-sm mr-3" type="search" placeholder="Rechercher des articles" aria-label="Search" [(ngModel)]="searchQuery" name="searchQuery">
+  <button class="btn btn-outline-success btn-sm" type="submit">
+    <i class="pi pi-search"></i> Rechercher
+  </button>
+</form>
+
+
+  
+    <!-- Tableau Produits -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let product of filteredProducts; let i = index">
+      <div class="card mb-4" style="border-radius: 10px;">
+        <div class="card-body">
+            <!-- Bande catégorie en haut de la carte -->
+          <div class="category-banner" style="background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px 5px 0 0;">
+            <span class="text-muted" style="font-weight: bold;">{{ product.categorie }}</span>
+          </div>
+
+
+          <!-- Product Image -->
+          <img [src]="productImages[i]" class="card-img-top" alt="product" style="height: 200px; object-fit: cover; border-radius: 5px;" />
+
+          <!-- Product Info -->
+          <h5 class="card-title mt-3">{{ product.nom }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+
+          <!-- Product Price and Stock -->
+          <div class="d-flex justify-content-between">
+            <span class="text-success">{{ product.prix | currency }}</span>
+            <span class="badge bg-primary">{{ product.stock }} au stock</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+  
