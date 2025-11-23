@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📦 Gestion des Commandes -- Spring Boot & Angular (JWT Security)
 
 Ce projet est une application complète de **gestion des commandes**
@@ -188,3 +189,6 @@ if (token) {
 
 **Bouchriha Imen**\
 Développeuse Full Stack -- Spring Boot & Angular
+=======
+
+>>>>>>> b9737c7c1da139b703247d9ca65f97526f8c713e
